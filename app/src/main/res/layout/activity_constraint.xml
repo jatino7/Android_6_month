@@ -90,6 +90,7 @@
     
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
+        android:id="@+id/card_view"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardBackgroundColor="@color/white"
@@ -126,6 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Hello"
+                    android:fontFamily="@font/melisma"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="30sp"
@@ -143,5 +145,87 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+<!--    Day 2-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn1"
+        android:text="dsVN:SDbsdvsdOVOISDnvdbiosiosdiooisvido kLDS jJD JS cj  DS  "
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn2"
+        android:text="bIFEUFPEWGfegui;eieuEUIWGWE"
+        app:layout_constraintTop_toBottomOf="@id/btn1"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="btn1,btn2"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="dsfoifWEUOUEffb;buv"
+        />
+
+
+
+<!--    chain-->
+
+    <Button
+        android:id="@+id/btn_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="left"
+        app:layout_constraintEnd_toStartOf="@id/btn_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn2"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        />
+
+    <Button
+        android:id="@+id/btn_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="middle"
+        app:layout_constraintStart_toEndOf="@id/btn_left"
+        app:layout_constraintTop_toBottomOf="@id/btn2"
+        app:layout_constraintEnd_toStartOf="@id/btn_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+    <Button
+        android:id="@+id/btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="right"
+        app:layout_constraintStart_toEndOf="@id/btn_middle"
+        app:layout_constraintTop_toBottomOf="@id/btn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
