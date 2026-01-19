@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Android_6_month"
         tools:targetApi="31">
         <activity
+            android:name=".BottomNavigation.BottomNavigationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bottom_navigation" />
+        <activity
+            android:name=".jetpack_navigation.JetpackActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Android_6_month" />
+        <activity
+            android:name=".jetpack_navigation.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Android_6_month" />
+        <activity
             android:name=".ConstraintLayout.ConstraintActivity"
             android:exported="false" />
         <activity
