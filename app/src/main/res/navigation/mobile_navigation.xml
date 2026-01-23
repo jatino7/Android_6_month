@@ -23,4 +23,9 @@
         android:label="@string/title_notifications"
         android:name="com.o7solutions.android_6_month.BottomNavigation.ui.notifications.NotificationsFragment"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.o7solutions.android_6_month.BottomNavigation.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

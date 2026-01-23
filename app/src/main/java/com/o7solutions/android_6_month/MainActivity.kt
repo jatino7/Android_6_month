@@ -47,7 +47,15 @@ class MainActivity : AppCompatActivity() {
 
             if(etText.toString() == "hello") {
 
-                val intent = Intent(this, RelativeLayoutActivity::class.java)
+                val intent = Intent(this, RelativeLayoutActivity::class.java).apply {
+
+
+//                    sending data through intent
+                    putExtra("name","Jatin")
+                    putExtra("age",23)
+                    putExtra("marks",85)
+
+                }
                 startActivity(intent)
             }
         }

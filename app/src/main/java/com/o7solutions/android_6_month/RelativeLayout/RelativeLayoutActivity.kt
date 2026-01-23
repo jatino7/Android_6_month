@@ -1,6 +1,7 @@
 package com.o7solutions.android_6_month.RelativeLayout
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,5 +21,12 @@ class RelativeLayoutActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+//        getting data from intent
+        val nameFromIntent  = intent.getStringExtra("name")
+        val ageFromIntent = intent.getIntExtra("age",0)
+        val marksFromIntent = intent.getIntExtra("marks",0)
+
+        Toast.makeText(this, "$nameFromIntent $ageFromIntent $marksFromIntent", Toast.LENGTH_SHORT).show()
     }
 }
