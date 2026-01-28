@@ -38,7 +38,8 @@ class HomeFragment : Fragment() {
             alertDialog.setOnClickListener {
 
 
-                AlertDialog.Builder(requireContext())
+                AlertDialog
+                    .Builder(requireContext())
                     .setTitle("Delete Item")
                     .setMessage("Are you sure you want to delete this?")
                     .setPositiveButton("Yes") { dialog, _ ->

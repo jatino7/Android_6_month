@@ -13,13 +13,8 @@
         android:theme="@style/Theme.Android_6_month"
         tools:targetApi="31">
         <activity
-            android:name=".TestActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Drawer.DrawerActivity"
-            android:exported="true"
-            android:label="@string/title_activity_drawer"
-            android:theme="@style/Theme.Android_6_month.NoActionBar">
+            android:name=".RoomDatabase.RoomActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,8 +22,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Drawer.DrawerActivity"
+            android:exported="true"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/Theme.Android_6_month.NoActionBar">
+
+        </activity>
+        <activity
             android:name=".Splash.SplashActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Recycler_View.RecyclerViewActivity"
             android:exported="true" />

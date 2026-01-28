@@ -21,8 +21,16 @@ class BottomNavigationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 //        bottom navigation
+//        binding
         val navView: BottomNavigationView = binding.navView
+
+//        findViewById
+        val bottomNavView = findViewById<BottomNavigationView>(R.id.nav_view)
+
         val navController = findNavController(R.id.bottom)
+
+
+
         navView.setupWithNavController(navController)
     }
 }
