@@ -7,14 +7,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.o7solutions.android_6_month.R
 
-class StudentAdapter(var list : ArrayList<Student>,var onClick: OnItemClickListener): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
+class StudentAdapter(
+
+    var list : ArrayList<Student>,
+    var onClick: OnItemClickListener
+): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): StudentViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_student,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_student, parent, false)
         return StudentViewHolder(view)
 
     }
@@ -34,6 +38,9 @@ class StudentAdapter(var list : ArrayList<Student>,var onClick: OnItemClickListe
         }
 
 
+        holder.name.setOnClickListener {
+            onClick.onTextViewClick(position)
+        }
 
 
     }
@@ -43,12 +50,11 @@ class StudentAdapter(var list : ArrayList<Student>,var onClick: OnItemClickListe
     }
 
 
-    inner class StudentViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+    inner class StudentViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         val age = view.findViewById<TextView>(R.id.age)
         val name = view.findViewById<TextView>(R.id.name)
         val marks = view.findViewById<TextView>(R.id.marks)
-
 
 
     }
@@ -57,6 +63,7 @@ class StudentAdapter(var list : ArrayList<Student>,var onClick: OnItemClickListe
     interface OnItemClickListener {
 
         fun onClick(position: Int)
+        fun onTextViewClick(position: Int)
 
     }
 }

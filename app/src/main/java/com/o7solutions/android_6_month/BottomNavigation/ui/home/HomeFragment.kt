@@ -11,8 +11,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 import com.o7solutions.android_6_month.R
 import com.o7solutions.android_6_month.databinding.FragmentHomeBinding
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class HomeFragment : Fragment() {
 
@@ -35,6 +41,8 @@ class HomeFragment : Fragment() {
 
         binding.apply {
 
+
+//            Alert Dialog
             alertDialog.setOnClickListener {
 
 
@@ -58,6 +66,8 @@ class HomeFragment : Fragment() {
 
             }
 
+
+//            Custom Alert dialog
             customAlertDialog.setOnClickListener {
                 val dialogView = layoutInflater.inflate(R.layout.dialog_custom_alert,null)
 
@@ -80,6 +90,47 @@ class HomeFragment : Fragment() {
 
                 dialog.show()
 
+            }
+
+
+            datePicker.setOnClickListener {
+                val datePicker = MaterialDatePicker.Builder.datePicker()
+                    .setTitleText("Tanish")
+                    .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                    .build()
+
+
+                datePicker.show(parentFragmentManager,"DATE_PICKER")
+
+                datePicker.addOnPositiveButtonClickListener { select->
+                    val dateString = SimpleDateFormat("dd/MMM/yyyy", Locale.getDefault()).format(Date(select))
+
+                    Toast.makeText(requireContext(), dateString, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            timePicker.setOnClickListener {
+
+
+                val timePicker = MaterialTimePicker.Builder()
+                    .setTimeFormat(TimeFormat.CLOCK_12H)
+                    .setHour(12)
+                    .setMinute(0)
+                    .setTitleText("Select time")
+                    .build()
+
+
+                timePicker.show(parentFragmentManager,"Time_Picker")
+
+                timePicker.addOnPositiveButtonClickListener {
+                    val hour = timePicker.hour
+                    val minute = timePicker.minute
+
+                    val formattedTime = String.format(Locale.getDefault(),"%02d:%02d",hour,minute)
+
+
+                    Toast.makeText(requireContext(), formattedTime, Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

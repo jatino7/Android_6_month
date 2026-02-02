@@ -14,6 +14,7 @@ class ConstraintActivity : AppCompatActivity() {
     lateinit var binding: ActivityConstraintBinding
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

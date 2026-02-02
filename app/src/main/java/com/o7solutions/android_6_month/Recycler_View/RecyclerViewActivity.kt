@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.o7solutions.android_6_month.R
 import com.o7solutions.android_6_month.databinding.ActivityMainBinding
 import com.o7solutions.android_6_month.databinding.ActivityRecyclerViewBinding
@@ -35,8 +36,13 @@ class RecyclerViewActivity : AppCompatActivity(), StudentAdapter.OnItemClickList
 
         adapter = StudentAdapter(studentList,this)
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = adapter
+        var recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+
+//        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+//        binding.recyclerView.adapter = adapter
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
 
         addStudentData()
@@ -64,7 +70,17 @@ class RecyclerViewActivity : AppCompatActivity(), StudentAdapter.OnItemClickList
 
     override fun onClick(position: Int) {
 
-
         Toast.makeText(this, studentList[position].id.toString(), Toast.LENGTH_SHORT).show()
+
     }
+
+    override fun onTextViewClick(position: Int) {
+        Toast.makeText(this, studentList[position].name, Toast.LENGTH_SHORT).show()
+    }
+
+//    override fun onClick(position: Int) {
+//
+//
+//        Toast.makeText(this, studentList[position].id.toString(), Toast.LENGTH_SHORT).show()
+//    }
 }

@@ -15,11 +15,7 @@
         <activity
             android:name=".RoomDatabase.RoomActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".TestActivity"
@@ -36,11 +32,22 @@
             android:exported="true" />
         <activity
             android:name=".Recycler_View.RecyclerViewActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+
+        </activity>
         <activity
             android:name=".BottomNavigation.BottomNavigationActivity"
             android:exported="true"
-            android:label="@string/title_activity_bottom_navigation" />
+            android:label="@string/title_activity_bottom_navigation" >
+
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".ConstraintLayout.ConstraintActivity"
             android:exported="true" />
