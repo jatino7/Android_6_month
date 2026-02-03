@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -133,6 +134,41 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+
+        binding.bottomSheetBtn.setOnClickListener {
+
+//            creating dialog for bottom sheet
+            val dialog = BottomSheetDialog(requireContext())
+
+            var view = layoutInflater.inflate(R.layout.bottom_sheet_layout,null)
+
+            var nameEt: EditText = view.findViewById<EditText>(R.id.nameET)
+            var ageEt: EditText = view.findViewById<EditText>(R.id.ageET)
+
+            view.findViewById<Button>(R.id.submitBtn).setOnClickListener {
+
+                if(nameEt.text.toString().isEmpty()) {
+                    nameEt.error = "Please enter name"
+                } else if(ageEt.text.toString().isEmpty()) {
+                    ageEt.error = "Please enter age"
+                } else {
+                    Toast.makeText(requireContext(), "Options are filled", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }
+            }
+
+
+            view.findViewById<Button>(R.id.closeBtn).setOnClickListener {
+                dialog.dismiss()
+            }
+
+
+            dialog.setContentView(view)
+            dialog.show()
+        }
+
+
+
     }
 
 
