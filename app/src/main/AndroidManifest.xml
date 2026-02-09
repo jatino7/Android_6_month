@@ -4,16 +4,10 @@
 
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" />
-
-<!--    Web View-->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-
-<!--    Sensitive permissions-->
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
+        android:required="false" /> <!-- Web View -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Sensitive permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -26,20 +20,19 @@
         android:theme="@style/Theme.Android_6_month"
         tools:targetApi="31">
         <activity
+            android:name=".Firebase.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".Permissions.PermissionsActivity"
             android:exported="false" />
         <activity
             android:name=".WebView.WebActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".RoomDatabase.RoomActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".TestActivity"
             android:exported="false" />
@@ -47,17 +40,23 @@
             android:name=".Drawer.DrawerActivity"
             android:exported="true"
             android:label="@string/title_activity_drawer"
-            android:theme="@style/Theme.Android_6_month.NoActionBar"></activity>
+            android:theme="@style/Theme.Android_6_month.NoActionBar" />
         <activity
             android:name=".Splash.SplashActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Recycler_View.RecyclerViewActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".BottomNavigation.BottomNavigationActivity"
             android:exported="true"
-            android:label="@string/title_activity_bottom_navigation"></activity>
+            android:label="@string/title_activity_bottom_navigation" />
         <activity
             android:name=".ConstraintLayout.ConstraintActivity"
             android:exported="true" />

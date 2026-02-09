@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.o7solutions.android_6_month.BottomNavigation.BottomNavigationActivity
+import com.o7solutions.android_6_month.Firebase.RegisterActivity
 import com.o7solutions.android_6_month.R
 
 class SplashActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, BottomNavigationActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }, 2000)
     }
