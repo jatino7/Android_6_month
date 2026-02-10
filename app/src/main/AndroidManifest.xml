@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Android_6_month"
         tools:targetApi="31">
         <activity
+            android:name=".Firebase.RealDBActivity"
+            android:exported="false" />
+        <activity
             android:name=".Firebase.RegisterActivity"
             android:exported="false" />
         <activity
@@ -27,9 +30,7 @@
             android:exported="false" />
         <activity
             android:name=".WebView.WebActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".RoomDatabase.RoomActivity"
             android:exported="true" />
@@ -43,7 +44,7 @@
             android:theme="@style/Theme.Android_6_month.NoActionBar" />
         <activity
             android:name=".Splash.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
