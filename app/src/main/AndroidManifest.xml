@@ -20,8 +20,21 @@
         android:theme="@style/Theme.Android_6_month"
         tools:targetApi="31">
         <activity
+            android:name=".Firebase.RecyclerDBActivity"
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
             android:name=".Firebase.RealDBActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Firebase.RegisterActivity"
             android:exported="false" />
@@ -30,7 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".WebView.WebActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".RoomDatabase.RoomActivity"
             android:exported="true" />
@@ -45,11 +58,7 @@
         <activity
             android:name=".Splash.SplashActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Recycler_View.RecyclerViewActivity"

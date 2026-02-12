@@ -26,6 +26,10 @@ class RealDBActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        writeNewUser("1234","Jatin","jatin@gmail.com")
+        writeNewUser("12345","Tanish","tanish@gmail.com")
+        writeNewUser("123456","Deepali","deepali@gmail.com")
     }
 
     fun writeNewUser(userId: String, name: String, email: String) {
