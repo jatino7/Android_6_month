@@ -8,10 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.o7solutions.android_6_month.R
 
 class RealDBAdapter(val listOfSUsers: ArrayList<User>): RecyclerView.Adapter<RealDBAdapter.ViewHolder>() {
+
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
+
+
        val view = LayoutInflater.from(parent.context).inflate(R.layout.user_item,parent,false)
         return ViewHolder(view)
     }
