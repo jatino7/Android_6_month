@@ -83,4 +83,8 @@ dependencies {
 //    FCM
     implementation("com.google.firebase:firebase-messaging:23.4.1")
 
+//Appwrite
+    implementation("io.appwrite:sdk-for-android:12.0.0") // Check for the latest version
+
+
 }
