@@ -37,7 +37,15 @@ android {
         jvmTarget = "11"
     }
 
+    composeOptions {
+//        same as kotlin version
+        kotlinCompilerExtensionVersion = "2.0.21"
+    }
+
+
+
     buildFeatures.viewBinding = true
+    buildFeatures.compose = true
 }
 
 dependencies {
@@ -87,4 +95,10 @@ dependencies {
     implementation("io.appwrite:sdk-for-android:12.0.0") // Check for the latest version
 
 
+// COMPOSE
+    implementation("androidx.compose.ui:ui:1.6.0")
+    implementation("androidx.compose.material3:material3:1.2.0")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
+    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation("com.google.android.material:compose-theme-adapter-3:1.1.1")
 }

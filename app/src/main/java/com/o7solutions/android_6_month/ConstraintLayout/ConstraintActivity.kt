@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.tooling.ComposeToolingApi
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.o7solutions.android_6_month.R
@@ -29,9 +32,22 @@ class ConstraintActivity : AppCompatActivity() {
             insets
         }
 
+        binding.composeView.setContent {
+            appName()
+        }
+
 
         binding.btn2.setOnClickListener {
             Toast.makeText(this, "btn2", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+    @Composable
+    fun appName() {
+
+
+        Text("Hello")
+    }
+
 }
