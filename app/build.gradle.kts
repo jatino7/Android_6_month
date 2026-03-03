@@ -37,15 +37,15 @@ android {
         jvmTarget = "11"
     }
 
-    composeOptions {
-//        same as kotlin version
-        kotlinCompilerExtensionVersion = "2.0.21"
-    }
+//    composeOptions {
+////        same as kotlin version
+//        kotlinCompilerExtensionVersion = "2.0.21"
+//    }
 
 
 
     buildFeatures.viewBinding = true
-    buildFeatures.compose = true
+//    buildFeatures.compose = true
 }
 
 dependencies {
@@ -101,4 +101,10 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
     implementation("androidx.activity:activity-compose:1.8.2")
     implementation("com.google.android.material:compose-theme-adapter-3:1.1.1")
+
+//    retrofit
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+// Compose dependencies are usually included by default in new projects
 }

@@ -32,9 +32,9 @@ class ConstraintActivity : AppCompatActivity() {
             insets
         }
 
-        binding.composeView.setContent {
-            appName()
-        }
+//        binding.composeView.setContent {
+//            appName()
+//        }
 
 
         binding.btn2.setOnClickListener {
@@ -43,11 +43,11 @@ class ConstraintActivity : AppCompatActivity() {
     }
 
 
-    @Composable
-    fun appName() {
-
-
-        Text("Hello")
-    }
+//    @Composable
+//    fun appName() {
+//
+//
+//        Text("Hello")
+//    }
 
 }
