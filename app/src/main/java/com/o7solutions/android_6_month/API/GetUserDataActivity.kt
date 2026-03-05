@@ -17,6 +17,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class GetUserDataActivity : AppCompatActivity() {
+
+    lateinit var viewModel: DataViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,23 +36,42 @@ class GetUserDataActivity : AppCompatActivity() {
             .build()
             .create(ApiInterface::class.java)
 
+        var repo = DataRepository(api)
 
-        try {
-
-            lifecycleScope.launch {
-
-                var userList = withContext(Dispatchers.IO) {
-                    api.getUsers()
-                }
-
-                Log.d("User list",userList.toString())
-            }
+        viewModel = DataViewModel(repo)
 
 
-        } catch(e: Exception) {
-            Toast.makeText(this, e.localizedMessage, Toast.LENGTH_SHORT).show()
-            Log.e("Exception Message",e.message.toString())
-//            Log
+        viewModel.userList.observe(this) { userList ->
+
+            Log.d("User List",userList.toString())
+
         }
+
+
+        viewModel.error.observe(this) { error->
+            Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+        }
+
+
+        viewModel.getUsersInViewModel()
+
+
+//        try {
+//
+//            lifecycleScope.launch {
+//
+//                var userList = withContext(Dispatchers.IO) {
+//                    api.getUsers()
+//                }
+//
+//                Log.d("User list",userList.toString())
+//            }
+//
+//
+//        } catch(e: Exception) {
+//            Toast.makeText(this, e.localizedMessage, Toast.LENGTH_SHORT).show()
+//            Log.e("Exception Message",e.message.toString())
+////            Log
+//        }
     }
 }
