@@ -107,4 +107,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 // Compose dependencies are usually included by default in new projects
+
+
+    implementation("com.google.mlkit:translate:17.0.3")
 }
