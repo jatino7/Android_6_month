@@ -119,4 +119,15 @@ dependencies {
     implementation("androidx.camera:camera-view:1.3.4")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("com.google.android.gms:play-services-location:21.3.0")
+
+
+
+    implementation("com.google.mlkit:face-detection:16.1.7")
+
+    // TensorFlow Lite (For Recognition/Embeddings)
+    implementation("org.tensorflow:tensorflow-lite:2.16.1")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+
+    // Gson for Local Storage (Converting FloatArray to String)
+    implementation("com.google.code.gson:gson:2.13.2")
 }
