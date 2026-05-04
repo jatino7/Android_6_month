@@ -50,6 +50,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -130,4 +131,9 @@ dependencies {
 
     // Gson for Local Storage (Converting FloatArray to String)
     implementation("com.google.code.gson:gson:2.13.2")
-}
+
+
+//    4/5/2026
+    implementation("com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:3.5.0")
+    implementation("com.guolindev.permissionx:permissionx:1.7.1")
+    }

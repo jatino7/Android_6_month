@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Input for Call ID -->
+    <EditText
+        android:id="@+id/etCallId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Call ID" />
+
+    <!-- Start Call Button -->
+    <Button
+        android:id="@+id/btnStartCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Call"
+        android:layout_marginTop="12dp" />
+
+    <!-- Container for Zego Call UI -->
+    <FrameLayout
+        android:id="@+id/callContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
